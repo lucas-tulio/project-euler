@@ -1,8 +1,11 @@
-num = 600851475143
+num = 13195
 primes = []
+
+print "num = " + str(num)
 
 for i in range(2, num):
   if num % i == 0:
+    print i
     primes.append(i)
   result = 1
   for j in primes:
@@ -10,4 +13,4 @@ for i in range(2, num):
   if result == num:
     break
 
-print primes[-1]
+print "last: " + str(primes[-1])
