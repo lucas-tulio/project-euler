@@ -1,6 +1,6 @@
 def is_prime(num, i):
-
-  if num == 1:
+  
+  if num == 2:
     return True
   if num % 2 == 0:
     return False
@@ -16,8 +16,8 @@ def find_nth_prime(num):
   i = 2
   while primes < num:
     if is_prime(i, 2):
-      print i
       primes = primes + 1
     i = i + 1
+  print str(num) + "th prime: " + str(i - 1)
 
-find_nth_prime(10001)
+find_nth_prime(10000)
