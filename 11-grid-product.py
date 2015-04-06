@@ -20,7 +20,15 @@ grid = [
   20, 73, 35, 29, 78, 31, 90,  1, 74, 31, 49, 71, 48, 86, 81, 16, 23, 57,  5, 54,
    1, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52,  1, 89, 19, 67, 48]
 
+numbers = 4  # Number of numbers to multiply
+row_size = 20
+
 def find_products():
   return 0
 
-print(grid)
+i = 0
+for j in range(0, 18):
+  for i in range(0, numbers):
+    item = i + j
+    print(grid[(row_size * i) + item])
+  print("\n")
