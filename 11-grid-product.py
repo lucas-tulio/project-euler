@@ -24,10 +24,30 @@ numbers = 4  # Number of numbers to multiply
 columns = 20
 rows = 20
 
-i = 0
-for k in range(0, rows - 3):
-  for j in range(0, columns - 3):
+# Diagonally, left to right
+max_product_dlr = 0
+for k in range(0, rows - numbers - 1):
+  for j in range(0, columns - numbers - 1):
+    product = 1
     for i in range(0, numbers):
       item = i + j
-      print(grid[(columns * (i + k)) + item])
-    print("\n")
+      num = grid[(columns * (i + k)) + item]
+      product = product * num
+    if product > max_product_dlr:
+      max_product_dlr = product
+
+# Diagonally, right to left
+max_product_drl = 0
+for k in range(0, rows - numbers - 1):
+  for j in reversed(range(columns - numbers - 1, 0)):
+    product = 1
+    for i in range(0, numbers):
+      item = i + j
+      num = grid[(columns * (i + k)) + item]
+      product = product * num
+    if product > max_product_drl:
+      max_product_drl = product
+
+print("max products:")
+print("diagonally, left to right: " + str(max_product_dlr))
+print("diagonally, right to left: " + str(max_product_drl))
